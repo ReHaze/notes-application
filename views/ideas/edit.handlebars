@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Add</h1>
+	<div class="card card-body">
+		{{#each errors}}
+		<div class="alert alert-danger">{{text}}</div>
+		{{/each}}
+		<h3>Редактировать заметку
+		</h3>
+		<form action="/ideas/{{idea.id}}?_method=PUT" method="post">
+			<input type="hidden" name="_method" value="PUT">
+			<div class="form-group">
+				<label for="title">Название</label>
+				<input type="text" class="form-control" name="title" value="{{idea.title}}" required>
+			</div>
+			<div class="form-group">
+				<label for="detailes">Описание</label>
+				<textarea class="form-control" name="detailes" required>
+					{{idea.detailes}}
+				</textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Отправить</button>
+		</form>
+	</div>
+</div>

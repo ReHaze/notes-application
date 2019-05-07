@@ -1,0 +1,54 @@
+<div class="container p-0">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+		<a class="navbar-brand test" href="/">App notes</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		{{#if user}}
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav navbar-nav-full">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/about">О сайте</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Выход</a>
+				</li>
+				<li class="nav-item dropdown align ">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						Заметки
+					</a>
+					<div class="dropdown-menu drop-align" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/ideas/add">Добавить заметку</a>
+						<a class="dropdown-item" href="/ideas">Все заметки</a>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+		{{else}}
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav navbar-nav-full">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/about">О сайте</a>
+				</li>
+				<li class="nav-item align">
+					<a class="nav-link" href="/users/login">Войти <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/users/register">Регистрация <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</div>
+		{{/if}}
+	</nav>
+</div>

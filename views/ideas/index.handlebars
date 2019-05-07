@@ -1,0 +1,23 @@
+<div class="container mt-3">
+	<h1 class="text-center">Ваши идеи:</h1>
+	{{#each ideas}}
+	<div class="card card-body mb-3">
+		<h2>{{title}}</h2>
+		<p>{{detailes}}</p>
+		<a class="btn btn-dark mb-2" href="/ideas/edit/{{id}}">редактировать</a>
+		<form method="post" action="/ideas/{{id}}?_method=DELETE">
+			<input type="hidden" name="_method" value="DELETE">
+			<input type="submit" class="btn btn-danger btn-block" value="Удалить">
+		</form>
+	</div>
+	{{/each}}
+	{{#if ideas}}
+	{{null}}
+	{{else}}
+	<div class="alert alert-warning mt-3">
+		<p>
+			Заметок не найдено!
+		</p>
+	</div>
+	{{/if}}
+</div>
