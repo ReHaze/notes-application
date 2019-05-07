@@ -18,10 +18,6 @@ const User = mongoose.model('users');
 const Idea = mongoose.model('ideas');
 const port = process.env.PORT || 3002;
 
-setInterval(function () {
-  http.get("http://sleepy-fortress-90126.herokuapp.com/");
-}, 300000);
-
 app.listen(port);
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -50,12 +46,9 @@ app.use(function (req, res, next) {
 app.use('/public', express.static(path.join(__dirname, 'views/public/')))
 
 
-
-
-
 // Соединение с базой
 
-mongoose.connect('mongodb+srv://Ally:mq8hvz7zy@notes-5en3g.mongodb.net/test?retryWrites=true', {
+mongoose.connect('база данных', {
   useNewUrlParser: true
 })
   .then(() => console.log('MongoDB connected!'))
